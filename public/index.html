@@ -13,7 +13,8 @@
         <form action="/compile" method="post" accept-charset="utf-8">
           <label for="input">Sass</label>
           <textarea name="input">$box-color: red;
-
+            
+@import 'bourbon/bourbon';
 @import 'bitters/bitters';
 
 .box { 
@@ -25,6 +26,11 @@
             <option value="compact">Compact
             <option value="nested">Nested
             <option value="expanded" selected>Expanded
+          </select>
+          <label for="syntax">Syntax</label>
+          <select name="syntax">
+            <option value="sass">Sass
+            <option value="scss" selected>SCSS
           </select>
           <button type="submit">Go</button>
         </form>
