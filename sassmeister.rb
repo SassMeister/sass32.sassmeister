@@ -17,19 +17,10 @@ class SassMeisterApp < Sinatra::Base
 
   helpers SassMeister
 
-  configure do
-    APP_VERSION = '2.0.1'
-  end
-
   set :partial_template_engine, :erb
 
   configure :production do
-    APP_DOMAIN = 'sassmeister.com'
     require 'newrelic_rpm'
-  end
-
-  configure :development do
-    APP_DOMAIN = 'sassmeister.dev'
   end
 
   helpers do
@@ -46,7 +37,6 @@ class SassMeisterApp < Sinatra::Base
     end
   end
 
-
   before do
     @plugins = plugins
 
@@ -54,15 +44,6 @@ class SassMeisterApp < Sinatra::Base
     params[:original_syntax].downcase! unless params[:original_syntax].nil?
 
     headers 'Access-Control-Allow-Origin' => origin if origin
-  end
-
-  before /^(?!\/(authorize))/ do
-    if session[:version].nil? || session[:version] != APP_VERSION
-      session[:github_token] = nil
-      session[:github_id] = nil
-      @force_invalidate = true
-      session[:version] = APP_VERSION
-    end
   end
 
   post '/compile' do
@@ -74,7 +55,6 @@ class SassMeisterApp < Sinatra::Base
     }.to_json.to_s
   end
 
-
   post '/convert' do
     content_type 'application/json'
 
@@ -83,7 +63,6 @@ class SassMeisterApp < Sinatra::Base
       dependencies: get_build_dependencies(params[:input])
     }.to_json.to_s    
   end
-
 
   get '/extensions' do
     erb :extensions, layout: false

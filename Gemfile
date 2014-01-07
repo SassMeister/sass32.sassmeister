@@ -8,13 +8,6 @@ gem 'unicorn'
 gem 'sass', '~> 3.2.12'
 gem 'compass', '~> 0.12.2'
 
-group :assets do
-  gem 'rake'
-  gem 'thor'
-  gem 'jammit'
-  gem 'closure-compiler'
-end
-
 # group :development do
 #   gem 'pry-remote'
 # end
