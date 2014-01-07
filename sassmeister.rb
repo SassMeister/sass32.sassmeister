@@ -4,20 +4,16 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra/base'
 require 'sinatra/partial'
-require 'chairman'
 require 'json'
 require 'sass'
 require 'compass'
 require 'yaml'
 require 'sassmeister'
-require 'array'
 
 # require 'pry-remote'
 
 class SassMeisterApp < Sinatra::Base
   register Sinatra::Partial
-
-  use Chairman::Routes
 
   helpers SassMeister
 
@@ -25,53 +21,15 @@ class SassMeisterApp < Sinatra::Base
     APP_VERSION = '2.0.1'
   end
 
-  # implement redirects
-  class Chairman::Routes
-    configure :production do
-      helpers do
-        use Rack::Session::Cookie, :key => 'sassmeister.com',
-                                   :domain => '.sassmeister.com',
-                                   :path => '/',
-                                   :expire_after => 7776000, # 90 days, in seconds
-                                   :secret => ENV['COOKIE_SECRET']
-       end
-    end
-
-    configure :development do
-      helpers do
-        use Rack::Session::Cookie, :key => 'sassmeister.dev',
-                                   :path => '/',
-                                   :expire_after => 7776000, # 90 days, in seconds
-                                   :secret => 'local'
-      end
-    end
-
-    after '/authorize/return' do
-      session[:version] == SassMeisterApp::APP_VERSION
-
-      redirect to('/')
-    end
-
-    after '/logout' do
-      redirect to('/')
-    end
-  end
-
   set :partial_template_engine, :erb
 
   configure :production do
     APP_DOMAIN = 'sassmeister.com'
-    SANDBOX_DOMAIN = 'sandbox.sassmeister.com'
     require 'newrelic_rpm'
-
-    Chairman.config(ENV['GITHUB_ID'], ENV['GITHUB_SECRET'], ['gist'])
   end
 
   configure :development do
     APP_DOMAIN = 'sassmeister.dev'
-    SANDBOX_DOMAIN = 'sandbox.sassmeister.dev'
-    yml = YAML.load_file("config/github.yml")
-    Chairman.config(yml["client_id"], yml["client_secret"], ['gist'])
   end
 
   helpers do
@@ -90,8 +48,6 @@ class SassMeisterApp < Sinatra::Base
 
 
   before do
-    @github = Chairman.session(session[:github_token])
-    @gist = nil
     @plugins = plugins
 
     params[:syntax].downcase! unless params[:syntax].nil?
