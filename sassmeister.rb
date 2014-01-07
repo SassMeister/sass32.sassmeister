@@ -3,7 +3,6 @@ $LOAD_PATH.unshift(File.join(File.dirname(File.realpath(__FILE__)), 'lib'))
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra/base'
-require 'sinatra/partial'
 require 'json'
 require 'sass'
 require 'compass'
@@ -13,11 +12,7 @@ require 'sassmeister'
 # require 'pry-remote'
 
 class SassMeisterApp < Sinatra::Base
-  register Sinatra::Partial
-
   helpers SassMeister
-
-  set :partial_template_engine, :erb
 
   configure :production do
     require 'newrelic_rpm'
@@ -65,7 +60,7 @@ class SassMeisterApp < Sinatra::Base
   end
 
   get '/extensions' do
-    erb :extensions, layout: false
+    send_file File.join(settings.public_folder, 'extensions.html')
   end
   
   run! if app_file == $0
