@@ -5,6 +5,7 @@ desc "Update bundled gems. Use this in place of bundle update"
 task "bundle:update" do
   plugins = YAML.load_file("config/plugins.yml")
   gemfile = File.new('Gemfile').read
+  sass_input_list = []
 
   plugins.each do |plugin, info|
     if ! gemfile.match(/^gem '#{info[:gem]}'/)
@@ -12,8 +13,6 @@ task "bundle:update" do
       Utilities.new.append('Gemfile', "\ngem '#{info[:gem]}'")
     end
   end
-
-  Utilities.new.update_plugin_list('views/about.erb', about_list)
 
   stdout = `bundle update`
 
