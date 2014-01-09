@@ -18,6 +18,8 @@ task "bundle:update" do
 
   puts stdout
 
+  Rake::Task["test"].invoke
+
   plugins.each do |plugin, info|
     version = stdout.scan(/#{info[:gem]} \((.+)\)/)[0][0].to_s
 
@@ -25,6 +27,12 @@ task "bundle:update" do
   end
 
   Utilities.new.update_plugin_list('public/extensions.html', sass_input_list)
+end
+
+
+require 'rake/testtask'
+Rake::TestTask.new do |t|
+  t.pattern = "spec/*_spec.rb"
 end
 
 

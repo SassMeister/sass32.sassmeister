@@ -6,48 +6,191 @@ Bitters:
     - bitters/bitters
   :fingerprint: (bitters|bitters/*)
   :url: http://bitters.bourbon.io
+  :sample: >
+    @import "bourbon/bourbon";
+    @import "neat/neat";
+    @import "bitters/bitters";
+
+    h1[id] {
+      margin-bottom: .5em;
+    }
+
+    ul.default {
+      @extend %default-ul;
+    }
+
+    ol.default {
+      @extend %default-ol;
+    }
+
 "Blend Modes":
-  :gem: blend-mode
-  :import: 
+  :gem: compass-blend-modes
+  :import:
     - blend-modes
   :fingerprint: blend-mode*
   :url: https://github.com/heygrady/scss-blend-modes
+  :sample: >
+    @import "blend-modes";
+
+    .multiply {
+        background-color: blend-multiply(#7FFFD4, #DEB887);
+    }
 Bourbon:
   :gem: bourbon-compass
-  :import: 
+  :import:
     - bourbon/bourbon
   :fingerprint: (bourbon|bourbon/*)
   :url: http://bourbon.io/
+  :sample: >
+    @import "bourbon/bourbon";
+
+    box:hover {
+      @include animation-name(scale, slide);
+      @include animation-duration(2s);
+      @include animation-timing-function(ease);
+      @include animation-iteration-count(infinite);
+
+      // Animation shorthand works the same as the CSS3 animation shorthand
+      @include animation(scale 1.0s ease-in, slide 2.0s ease);
+    }
 Breakpoint:
   :gem: breakpoint
-  :import: 
+  :import:
     - breakpoint
   :fingerprint: breakpoint
   :url: https://github.com/canarymason/breakpoint
+  :sample: >
+    @import "breakpoint";
+
+    // create $breakpoint variables like so
+    // assume min-width (by default) if only a number
+
+    $breakpoint-medium-width: 500px;
+    $breakpoint-medium-width-em: 30em;
+
+    .foo {
+      @include breakpoint($breakpoint-medium-width) {
+        content: 'medium widths';
+      }
+    }
+    .bar {
+      @include breakpoint($breakpoint-medium-width-em) {
+        content: 'medium widths measured in ems';
+      }
+    }
+
+    // You can use breakpoint without variables too.
+
+    .rhcp {
+      @include breakpoint(30em 40em) {
+        content: 'between 30 and 40ems';
+      }
+    }
 "Breakpoint Slicer":
   :gem: breakpoint-slicer
   :import:
     - breakpoint-slicer
   :fingerprint: breakpoint-slicer
   :url: https://github.com/lolmaus/breakpoint-slicer
+  :sample: >
+    @import "breakpoint-slicer";
+
+    $slicer-breakpoints: 0 400px 600px 800px 1050px;
+
+    .element {
+      @include at(2) {
+        background-color: red;
+      }
+
+      @include at(4) {
+        background-color: blue;
+      }
+    }
 Breakup:
   :gem: breakup
-  :import: 
+  :import:
     - breakup
   :fingerprint: breakup
   :url: https://github.com/BPScott/breakup
+  :sample: >
+    @import "breakup";
+
+    $breakup-included-blocks: ('basic' 'thin' 'wide' 'full');
+
+    $breakup-breakpoints: (
+      'thin' '(max-width: 35.999em)',
+      'wide' '(min-width: 36em)',
+      'full' '(min-width: 61em)'
+    );
+
+    @include breakup-block('basic') {
+      .component { background-color: red; }
+    }
+
+    @include breakup-breakpoint('thin') {
+      .component { background-color: blue; }
+    }
+
+    @include breakup-breakpoint('wide') {
+      .component { background-color: green; }
+    }
+
+"Ceasar Easing":
+  :gem: ceaser-easing
+  :import:
+    - ceaser-easing
+  :fingerprint: ceaser-easing
+  :url: https://github.com/jhardy/compass-ceaser-easing
+  :sample: >
+    @import "ceaser-easing";
+
+    #box {
+        width: 500px;
+        @include ceaser-transition(width, 500ms, $easeInOutExpo, 1s);
+    }
 "Color Schemer":
   :gem: color-schemer
-  :import: 
+  :import:
     - color-schemer
   :fingerprint: color-schemer
   :url: https://github.com/Team-Sass/color-schemer
+  :sample: >
+    @import "color-schemer";
+
+    $primary: cs-primary();
+    $secondary: darken(cs-secondary(), 10%);
+    $tertiary: cs-tertiary();
+    $quadrary: cs-quadrary();
+
+    .primary {
+      color: $primary
+    }
+
+    .secondary {
+      color: $secondary
+    }
+
+    .tertiary {
+      color: $tertiary
+    }
+
+    .quadrary {
+      color: $quadrary
+    }
+
 Compass:
   :gem: compass
-  :import: 
+  :import:
     - compass
   :fingerprint: (compass|compass/*)
   :url: http://compass-style.org
+  :sample: >
+    @import "compass";
+
+    #wrapper {
+      @include columns(20em 2);
+    }
+
 "Compass Placeholders":
   :gem: compass-placeholders
   :import:
@@ -55,60 +198,188 @@ Compass:
     - compass-placeholders
   :fingerprint: compass-placeholders
   :url: https://github.com/hagenburger/compass-placeholders
+  :sample: >
+    @import "compass";
+    @import "compass-placeholders";
+
+    a.first-link {
+      @extend %hover-link;
+    }
+
+    a.second-link {
+      @extend %hover-link;
+    }
+
 "Compass Slideshow":
   :gem: css-slideshow
-  :import: 
+  :import:
+    - compass
     - css-slideshow
   :fingerprint: css-slideshow
   :url: https://github.com/ericam/compass-css-slideshow
+  :sample: >
+    @import "compass";
+    @import "css-slideshow";
+
+    .slideshow {
+      @include slideshow;
+    }
+
 "Fancy Buttons":
   :gem: fancy-buttons
-  :import: 
+  :import:
     - fancy-buttons
   :fingerprint: fancy-buttons
   :url: http://brandonmathis.com/projects/fancy-buttons/
+  :sample: >
+    $fb-image-path: '';
+    @import "fancy-buttons";
+
+    button {
+      @include fancy-button-structure(26px, 1em, 4px);
+      @include fancy-button-colors(#124c89, adjust-hue(#124c89, -120), darken(adjust-hue(#124c89, -120), 6));
+    }
+
 Fittext:
   :gem: fittext
-  :import: 
+  :import:
     - fittext
   :fingerprint: fittext
   :url: http://www.bookcasey.com/fittext/
+  :sample: >
+    @import "fittext";
+
+    h1 {
+      font-size: 6em;
+      @include fittext($min-media: 200px, $max-media: 1400px, $min-font-size: 5em, $max-font-size: 50em, $media-increment: 100, $font-increment: 1.5, $ratio: 1, $round: false);
+    }
+
 Foundation:
   :gem: zurb-foundation
   :import:
     - foundation
   :fingerprint: foundation*
   :url: http://foundation.zurb.com/docs/sass.html
+  :sample: >
+    $include-html-classes: false;
+    $include-html-tooltip-classes: true;
+
+    $tooltip-bg: #000;
+    $default-float: left;
+    $primary-color: #444;
+    $global-radius: emCalc(20);
+
+    @import "foundation/components/global";
+    @import "foundation/components/tooltips";
 "Grid Coordinates":
   :gem: grid-coordinates
-  :import: 
+  :import:
     - grid-coordinates
   :fingerprint: grid-coordinates
   :url: https://github.com/adamstac/grid-coordinates
+  :sample: >
+    $grid-columns: 12;
+    $grid-width: 60px;
+    $grid-gutter-width: 20px;
+
+    @import "grid-coordinates";
+
+    @include grid-coordinates;
 Harsh:
   :gem: harsh
-  :import: 
+  :import:
     - harsh
   :fingerprint: harsh
   :url: http://www.bookcasey.com/harsh/
+  :sample: >
+    @import "harsh";
+
+    .random {
+      @include harsh();
+    }
+
+    .background-color {
+      @include harsh(white, rgb(200,50,50), .95);
+    }
+
+    .bright {
+      @include harsh(random, white, .05);
+    }
+
+    .dull {
+      @include harsh($transparency: .95);
+    }
+
+    .specify-colors {
+      @include harsh(#FF0000 blue rgb(50,200,50));
+    }
+
+    .horizontal {
+      @include harsh($angle: top);
+    }
+
+    .angled {
+      @include harsh($angle: -32deg);
+    }
 Compass Inuit:
   :gem: compass-inuit
-  :import: 
+  :import:
     - compass-inuit
   :fingerprint: compass-inuit*
   :url: https://github.com/stephenway/compass-inuit
+  :sample: >
+    @import "compass-inuit";
+
+    html{
+        font:1em/1.5 Georgia, serif;
+        padding:5%;
+        background-color:#fff;
+        color:#333;
+    }
+    body{
+        max-width:480px;
+        margin:0 auto;
+    }
 Jacket:
   :gem: jacket
   :import:
     - jacket
   :fingerprint: jacket
   :url: https://github.com/Team-Sass/jacket
+  :sample: >
+    @import "jacket";
+
+    $jacket: track, overcoat, mod ".triumph";
+
+    .cafe-race {
+      /* Universal */
+      font-size: 1rem;
+
+      /* jacket(track, tie, suit) */
+      @include jacket(track, tie, suit) {
+        position: absolute;
+      }
+      /* jacket(suit, mod, overcoat) */
+      @include jacket(suit, mod, overcoat) {
+        top: 3em;
+      }
+      /* jacket(leather) */
+      @include jacket(leather) {
+        position: fixed;
+      }
+    }
 "Modular Scale":
   :gem: modular-scale
-  :import: 
+  :import:
     - modular-scale
   :fingerprint: modular-scale
   :url: https://github.com/Team-Sass/modular-scale
+  :sample: >
+    @import "modular-scale";
+
+    .double-standard {
+      width: ms(7, 1em 3em);
+    }
 Neat:
   :gem: neat-compass
   :import:
@@ -116,47 +387,127 @@ Neat:
     - neat/neat
   :fingerprint: (neat|neat/*)
   :url: http://neat.bourbon.io
+  :sample: >
+    @import "bourbon/bourbon";
+    @import "neat/neat";
+
+    section {
+      @include outer-container;
+      aside { @include span-columns(3); }
+      article { @include span-columns(9); }
+    }
 'Normalize SCSS':
   :gem: normalize-scss
   :import:
     - normalize-scss
   :fingerprint: normalize-scss
   :url: https://github.com/JohnAlbin/normalize.css-with-sass-or-compass
+  :sample: >
+    $legacy-support-for-ie6: false;
+    $legacy-support-for-ie7: true;
+
+    @import "normalize";
+
 "Photoshop Drop Shadow":
   :gem: compass-photoshop-drop-shadow
-  :import: 
+  :import:
     - photoshop-drop-shadow
   :fingerprint: photoshop-drop-shadow
   :url: https://github.com/heygrady/compass-photoshop-drop-shadow
+  :sample: >
+    @import 'photoshop-drop-shadow';
+
+    // Simple shadow
+
+    div.box-shadow {
+      @include photoshop-drop-shadow(120, 5px, 0, 5px, rgba(#000, 0.75));
+    }
+
+    // Inner shadow
+
+    div.inner-box-shadow {
+      @include photoshop-inner-shadow(120, 5px, 0, 5px, rgba(#000, 0.75));
+    }
+
+    // Supporting multiple shadows
+
+    div.multiple-box-shadow {
+      @include box-shadow(
+        photoshop-shadow(120, 5px, 0, 5px, rgba(#000, 0.75)),
+        photoshop-shadow(120, 5px, 0, 5px, rgba(#000, 0.75), inset)
+      );
+    }
+
+    // Multiple Text Shadow
+
+    h2 {
+      @include text-shadow(
+        photoshop-text-shadow(120, 5px, 0, 5px, rgba(#000, 0.75)),
+        photoshop-text-shadow(-60, 5px, 0, 5px, rgba(#300, 0.75))
+      );
+    }
 "Responsive Calculator":
   :gem: rwdcalc
-  :import: 
+  :import:
     - rwdcalc
   :fingerprint: rwdcalc
   :url: https://github.com/sturobson/Responsive-Calculator/tree/rwdcalcSass/SCSSMixin
+  :sample: >
+    @import "rwdcalc";
+
+    .foo {
+      margin: rwdcalc(10 10px 13 1em, 960);
+    }
 "Responsive Sass":
   :gem: responsive-sass
-  :import: 
+  :import:
     - responsive-sass
   :fingerprint: responsive-sass
   :url: http://ntreadway.github.com/responsive-sass/welcome
+  :sample: >
+    @import "responsive-sass";
+
+    .block {
+      @include mobile-landscape(960, 240, "/images/high-res.png");
+    }
 Salsa:
   :gem: salsa
-  :import: 
+  :import:
     - salsa
   :fingerprint: salsa
   :url: http://tsi.github.com/Salsa/
+  :sample: >
+    @import "salsa";
+
+    .e1 { @include grid(2); }
+    .e2 { @include grid(6 container); }
+    .e5 { @include grid(3/6); }
+    .e7 { @include grid(4/6 container); }
+    .e9 { @include grid(2/4); }
+    .e10 { @include grid(100%); }
+
 "Sassy Buttons":
   :gem: sassy-buttons
-  :import: 
+  :import:
     - sassy-buttons
   :fingerprint: sassy-buttons
   :url: http://jaredhardy.com/sassy-buttons/
+  :sample: >
+    @import "sassy-buttons";
+
+    .red { @include sassy-button-gradient("matte", #e86a43); }
+
+    .blue { @include sassy-button-gradient("simple", #4d8ccd); }
+
+    .green { @include sassy-button-gradient("glass", #8cbe5f); }
+
 # "Sassy Math":
 #   :gem: sassy-math
-#   :import: 
-#     - '' # This space intentionally left blank 
+#   :import:
+#     - '' # This space intentionally left blank
 #   :url: https://github.com/Team-Sass/Sassy-math
+#   :sample: >
+
 #"Sassy Maps":
 #  :gem: sassy-maps
 #  :import: 
@@ -170,6 +521,29 @@ Salsa:
     - sassy-text-shadow
   :fingerprint: sassy-text-shadow
   :url: http://sassymothereffingtextshadow.com/
+  :sample: >
+    @import "compass";
+    @import "sassy-text-shadow";
+
+    body {
+      text-align: center;
+    }
+
+    h1 {
+      @include text-shadow(sassy-text-shadow(#BADA55));
+      line-height: 8em;
+    }
+
+    h2 {
+      @include text-shadow(sassy-text-shadow(#BADA55, 100, 80, 120, 90, -45, 0.09));
+      line-height: 8em;
+    }
+
+    h3 {
+      @include text-shadow(long-shadow(30, #BADA55, 25, 0));
+      line-height: 8em;
+    }
+
 #SassyLists:
 #  :gem: SassyLists
 #  :import:
@@ -178,10 +552,37 @@ Salsa:
 #  :url: http://sassylists.com/
 Singularity.gs:
   :gem: singularitygs
-  :import: 
+  :import:
     - singularitygs
   :fingerprint: singularitygs
   :url: https://github.com/Team-Sass/singularity
+  :sample: >
+    @import "singularitygs";
+
+    $grids: 1 3 5 7 9;
+    $gutters: 1/3;
+
+    #foo {
+      @include grid-span(2, 3, $output-style: 'isolation', $options: 'both');
+    }
+    #foo {
+      @include isolation-span(2, 3, 'both');
+    }
+
+    #bar {
+      @include grid-span(2, 3, (2 8 2 1), .25, 'isolation');
+    }
+    #bar {
+      @include isolation-span(2, 3, $grid: (2 8 2 1), $gutter: .25);
+    }
+
+    #baz {
+      @include grid-span(2, 3, (2 8 2 1), .25, 'right');
+    }
+    #baz {
+      @include isolation-span(2, 3, 'right', (2 8 2 1), .25);
+    }
+
 "Singularity Extras":
   :gem: singularity-extras
   :import:
@@ -189,6 +590,41 @@ Singularity.gs:
     - singularity-extras
   :fingerprint: singularity-extras
   :url: https://github.com/Team-Sass/Singularity-extras
+  :sample: >
+    @import "singularitygs";
+    @import "singularity-extras";
+
+    $grids: 3;
+    $grids: add-grid(1 2 3 at 500px);
+    $grids: add-grid(ratio(golden(), 3) at 700px);
+    $grids: add-grid(ratio-spiral() at 900px);
+    $grids: add-grid(compound(2, 3, 4) at 1100px);
+
+    $gutters: .5;
+
+    #layouts {
+      content: 'Initial Layout';
+      @include grid-span(1, 2);
+
+      @include layout(6, .25, 'float') {
+          content: 'Inner Layout';
+          @include grid-span(1, 2);
+        }
+
+      @include breakpoint(500px) {
+        @include layout(6, .25, 'float') {
+          content: 'Inner Layout, Breakpoint';
+          @include grid-span(1, 2);
+
+          @include layout(2 4 6) {
+            @debug find-grid();
+            content: 'Nested Layout';
+            @include grid-span(1, 2);
+          }
+        }
+      }
+    }
+
 "Singularity Golden Grid":
   :gem: singularity-golden-grid
   :import:
@@ -196,40 +632,175 @@ Singularity.gs:
     - singularity-golden-grid
   :fingerprint: singularity-golden-grid
   :url: https://github.com/hunterman/singularity-golden-grid
+  :sample: >
+    @import "singularitygs";
+    @import 'singularity-golden-grid';
+
+    .my-container {
+        @include grid-container;
+    }
+    .my-grid-unit {
+        @include grid-column(2);
+    }
+    .my-other-grid-unit {
+        @include grid-column;
+    }
+
 Stipe:
   :gem: stipe
-  :import: 
+  :import:
     - stipe/manifest
     - stipe/grid/extends
   :fingerprint: (stipe|stipe/*)
   :url: https://github.com/Toadstool-Stipe/stipe
+  :sample: >
+    @import "stipe/manifest";
+    @import "stipe/grid/extends";
+
+    .form_control {
+      @include grid(4);
+
+      &:last-child {
+       @include grid(4.125, omega);
+      }
+      &:first-child {
+        @include grid(4.125, alpha);
+      }
+
+      & button[type=submit] {
+        display:block;
+        margin: 1.2em auto;
+      }
+    }
+
+
 Stitch:
   :gem: stitch
-  :import: 
+  :import:
     - stitch
   :fingerprint: stitch
   :url: http://anthonyshort.github.io/stitch-css/
+  :sample: >
+    @import 'stitch';
+
+    body {
+        @include sans-serif('Avenir');
+    }
+
+    #logo {
+        @include enable-hardware-acceleration
+    }
+
 Susy:
   :gem: susy
-  :import: 
+  :import:
     - susy
   :fingerprint: susy
   :url: http://susy.oddbird.net
+  :sample: >
+    @import "susy";
+
+    .ag2 { @include span-columns(6,10); }
+    .ag3 { @include span-columns(2 omega, 10); }
+    .ag4 { @include span-columns(3,6); }
+    .ag5 { @include span-columns(3 omega,6); }
+    .ag6 { @include span-columns(2,6); }
+    .ag10 { clear: both; } 
+
 Toolkit:
   :gem: toolkit
-  :import: 
+  :import:
     - toolkit
   :fingerprint: toolkit
   :url: https://github.com/Team-Sass/toolkit
+  :sample: >
+    @import "toolkit";
+
+    .ratio-16-9 {
+      @include intrinsic-ratio;
+    }
+
+    .ratio-4-3-75 {
+      @include intrinsic-ratio(4/3, 75%);
+    }
+
+    .ratio-7-8-75-iframe-no-extend {
+      @include intrinsic-ratio(7/8, 75%, 'iframe', false);
+    }
+
+
 "True":
   :gem: "true"
   :import:
     - "true"
   :fingerprint: "true"
   :url: https://github.com/ericam/true
+  :sample: >
+    @import "true";
+
+    // Column Math Tests
+    // =================
+
+    @include test-module('Column Math') {
+
+      // Is Symmetrical
+      // --------------
+
+      @include test('[function] is-symmetrical()') {
+        $sym: 12;
+        $asym: 1 2 4 1 2 1;
+        $baz: compact(4);
+
+        // 12 is a symmetrical grid.
+        $s: is-symmetrical($sym);
+        @include assert-true($s,
+          'Simple number should be symmetrical grid.');
+
+        // (1 2 4 1 2 1) is not a symmetrical grid.
+        $a: is-symmetrical($asym);
+        @include assert-false($a,
+          'List should be asymmetrical grid.');
+
+        // compact(4) is not a symmetrical grid (because it is a list).
+        $b: is-symmetrical($baz);
+        @include assert-false($b,
+          'Single-item list should be asymmetrical grid.');
+      }
+    }
+
+"YIQ Color Contrast":
+  :gem: compass-yiq-color-contrast
+  :import:
+    - yiq-color-contrast
+  :fingerprint: yiq-color-contrast
+  :url: https://github.com/timhettler/compass-yiq-color-contrast
+  :sample: >
+    @import "yiq-color-contrast";
+
+    #box {
+        @include yiq-contrasted(#0f0, #800080, #00FF00, 200);
+    }
 "Zen Grids":
   :gem: zen-grids
-  :import: 
+  :import:
     - zen
   :fingerprint: (zen|zen-grids)
   :url: http://zengrids.com/
+  :sample: >
+    @import "zen";
+
+    .content {
+      @include zen-grid-item(4, 3); // Make this grid item span 4 columns. // Position this grid item in the 3rd column.
+    }
+
+    .aside2 {
+      @include zen-grid-item(1, 7);
+    }
+
+    .footer1 {
+      @include zen-clear(); // Apply this mixin to start a new row.
+      @include zen-grid-item(3, 5);
+    }
+    .footer2 {
+      @include zen-grid-item(4, 1);
+    }

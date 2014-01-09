@@ -8,12 +8,18 @@ gem 'sass', '~> 3.2.12'
 gem 'compass', '~> 0.12.2'
 gem 'rake'
 
-# group :development do
-#   gem 'pry-remote'
-# end
+group :development do
+  gem 'pry-remote'
+  gem 'thor'
+end
 
 group :production do
   gem 'newrelic_rpm'
+end
+
+group :test do
+  gem 'rack-test'
+  gem 'thor'
 end
 
 gem 'bourbon-compass', '~> 3.1.8'
@@ -30,12 +36,10 @@ gem 'css-slideshow'
 gem 'fancy-buttons'
 gem 'modular-scale'
 gem 'responsive-sass'
-gem 'sassy-math'
 gem 'salsa'
 gem 'fittext'
 gem 'rwdcalc'
 gem 'zen-grids'
-gem 'blend-mode'
 gem 'breakpoint-slicer'
 gem 'sassy-text-shadow'
 gem 'compass-blend-modes'
@@ -54,3 +58,6 @@ gem 'true'
 # gem 'SassyLists'
 # gem 'sassy-maps'
 gem 'bitters-compass'
+
+gem 'ceaser-easing'
+gem 'compass-yiq-color-contrast'
