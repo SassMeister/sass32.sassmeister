@@ -73,6 +73,7 @@ GEM
     rack-protection (1.5.1)
       rack
     raindrops (0.12.0)
+    rake (10.1.1)
     responsive-sass (0.1.1)
       compass (>= 0.11)
     rwdcalc (0.0.2)
@@ -160,6 +161,7 @@ DEPENDENCIES
   newrelic_rpm
   normalize-scss
   rack-contrib!
+  rake
   responsive-sass
   rwdcalc
   salsa
