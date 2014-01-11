@@ -39,19 +39,6 @@ module SassMeister
   end
 
 
-  def get_frontmatter_dependencies(sass)
-    frontmatter = sass.scan(/^\/\/ ([\w\s]+?) \(v([[:alnum:]\.]+?)\)\s*$/)
-
-    dependencies = {}
-
-    unless frontmatter.empty?
-      frontmatter.each {|name, version| dependencies[name] = version}
-    end
-
-    return dependencies
-  end
-
-
   def unpack_dependencies(sass)
     frontmatter = sass.slice(/^\/\/ ---\n(?:\/\/ .+\n)*\/\/ ---\n/)
 
