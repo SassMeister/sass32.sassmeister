@@ -10,7 +10,7 @@ task "bundle:update" do
   plugins.each do |plugin, info|
     if ! gemfile.match(/^gem '#{info[:gem]}'/)
       puts "Adding #{info[:gem]} to Gemfile..."
-      Utilities.new.append('Gemfile', "\ngem '#{info[:gem]}'")
+      Utilities.new.append('Gemfile', "gem '#{info[:gem]}'")
     end
   end
 

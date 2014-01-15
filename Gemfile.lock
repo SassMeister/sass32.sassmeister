@@ -13,6 +13,8 @@ GEM
       compass (>= 0.11)
       neat-compass (>= 1.4.0)
       sass (>= 3.2)
+    bootstrap-sass (3.0.3.0)
+      sass (~> 3.2)
     bourbon-compass (3.1.8)
       compass (>= 0.11)
       sass (>= 3.2.0)
@@ -156,6 +158,7 @@ PLATFORMS
 
 DEPENDENCIES
   bitters-compass
+  bootstrap-sass
   bourbon-compass (~> 3.1.8)
   breakpoint
   breakpoint-slicer

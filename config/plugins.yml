@@ -35,6 +35,21 @@ Bitters:
     .multiply {
         background-color: blend-multiply(#7FFFD4, #DEB887);
     }
+
+"Bootstrap Sass":
+  :gem: bootstrap-sass
+  :import:
+    - bootstrap
+  :fingerprint: (bootstrap|bootstrap/*)
+  :url: https://github.com/twbs/bootstrap-sass
+  :sample: >
+    $navbar-default-bg: #312312;
+    $light-orange: #ff8c00;
+    $navbar-default-color: $light-orange;
+
+    @import "bootstrap";
+    @import "bootstrap/theme";
+
 Bourbon:
   :gem: bourbon-compass
   :import:
