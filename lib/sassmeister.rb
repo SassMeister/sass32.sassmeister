@@ -9,6 +9,8 @@ module SassMeister
   def require_plugins(sass)
     get_imports_from_sass(sass) { |name, plugin| require plugin[:gem] }
 
+    Compass.configuration.asset_cache_buster { nil }
+
     Compass.sass_engine_options[:load_paths].each do |path|
       Sass.load_paths << path
     end
