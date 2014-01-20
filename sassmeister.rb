@@ -8,6 +8,7 @@ require 'sass'
 require 'compass'
 require 'yaml'
 require 'sassmeister'
+require 'benchmark'
 
 # require 'pry-remote'
 
@@ -44,9 +45,16 @@ class SassMeisterApp < Sinatra::Base
   post '/compile' do
     content_type 'application/json'
 
+    css = ''
+
+    time = Benchmark.realtime do
+      css = sass_compile(params[:input], params[:syntax], params[:output_style])
+    end
+
     {
-      css: sass_compile(params[:input], params[:syntax], params[:output_style]),
-      dependencies: get_build_dependencies(params[:input])
+      css: css,
+      dependencies: get_build_dependencies(params[:input]),
+      time: time
     }.to_json.to_s
   end
 
