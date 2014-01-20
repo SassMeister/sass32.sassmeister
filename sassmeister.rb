@@ -61,15 +61,22 @@ class SassMeisterApp < Sinatra::Base
   post '/convert' do
     content_type 'application/json'
 
+    css = ''
+
+    time = Benchmark.realtime do
+      css = sass_convert(params[:original_syntax], params[:syntax], params[:input])
+    end
+
     {
-      css: sass_convert(params[:original_syntax], params[:syntax], params[:input]),
-      dependencies: get_build_dependencies(params[:input])
-    }.to_json.to_s    
+      css: css,
+      dependencies: get_build_dependencies(params[:input]),
+      time: time
+    }.to_json.to_s
   end
 
   get '/extensions' do
     send_file File.join(settings.public_folder, 'extensions.html')
   end
-  
+
   run! if app_file == $0
 end
