@@ -54,7 +54,7 @@ class SassMeisterApp < Sinatra::Base
     {
       css: css,
       dependencies: get_build_dependencies(params[:input]),
-      time: time
+      time: time.round(3)
     }.to_json.to_s
   end
 
@@ -70,7 +70,7 @@ class SassMeisterApp < Sinatra::Base
     {
       css: css,
       dependencies: get_build_dependencies(params[:input]),
-      time: time
+      time: time.round(3)
     }.to_json.to_s
   end
 
