@@ -13,7 +13,7 @@ class AppTest < MiniTest::Spec
 
   def is_valid?(css)
     css.strip!
-    return ! (css.nil? || css.empty? || css.include?('Undefined') || css.include?('Invalid'))
+    return ! (css.nil? || css.empty? || css.include?('Undefined') || css.include?('Invalid') || css.include?('unreadable'))
   end
 
   describe "Routes" do
