@@ -501,6 +501,24 @@ Salsa:
     .e9 { @include grid(2/4); }
     .e10 { @include grid(100%); }
 
+"Sass List–Maps":
+  :gem: sass-list-maps
+  :import:
+    - sass-list-maps
+  :fingerprint: sass-list-maps
+  :url: https://github.com/lunelson/sass-list-maps
+  :sample: >
+    @import "sass-list-maps";
+
+    $list-map: ( alpha 1, beta 2, gamma 3 );
+
+    .demo {
+      out: map-keys($list-map); //-> alpha, beta, gamma
+      out: map-values($list-map); //-> 1, 2, 3
+      out: map-has-key($list-map, gamma); //-> true
+      out: map-has-key($list-map, delta); //-> false
+    }
+
 "Sassy Buttons":
   :gem: sassy-buttons
   :import:
@@ -525,7 +543,7 @@ Salsa:
 
 #"Sassy Maps":
 #  :gem: sassy-maps
-#  :import: 
+#  :import:
 #    - sassy-maps
 #  :fingerprint: sassy-maps
 #  :url: https://github.com/Team-Sass/Sassy-Maps
@@ -720,7 +738,7 @@ Susy:
     .ag4 { @include span-columns(3,6); }
     .ag5 { @include span-columns(3 omega,6); }
     .ag6 { @include span-columns(2,6); }
-    .ag10 { clear: both; } 
+    .ag10 { clear: both; }
 
 Toolkit:
   :gem: toolkit
