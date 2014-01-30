@@ -501,7 +501,7 @@ Salsa:
     .e9 { @include grid(2/4); }
     .e10 { @include grid(100%); }
 
-"Sass List–Maps":
+"Sass List-Maps":
   :gem: sass-list-maps
   :import:
     - sass-list-maps
