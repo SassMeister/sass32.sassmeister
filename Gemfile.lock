@@ -13,7 +13,7 @@ GEM
       compass (>= 0.11)
       neat-compass (>= 1.4.0)
       sass (>= 3.2)
-    bootstrap-sass (3.0.3.0)
+    bootstrap-sass (3.1.0.0)
       sass (~> 3.2)
     bourbon-compass (3.1.8)
       compass (>= 0.11)
