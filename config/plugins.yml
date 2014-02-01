@@ -73,7 +73,7 @@ Breakpoint:
   :import:
     - breakpoint
   :fingerprint: breakpoint
-  :url: https://github.com/canarymason/breakpoint
+  :url: https://github.com/Team-Sass/breakpoint
   :sample: >
     @import "breakpoint";
 
