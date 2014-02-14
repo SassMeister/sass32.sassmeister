@@ -13,7 +13,7 @@ GEM
       compass (>= 0.11)
       neat-compass (>= 1.4.0)
       sass (>= 3.2)
-    bootstrap-sass (3.1.0.2)
+    bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     bourbon-compass (3.1.8)
       compass (>= 0.11)
@@ -90,6 +90,8 @@ GEM
       rack (>= 1.0)
     raindrops (0.12.0)
     rake (10.1.1)
+    responsive-modular-scale (0.2.0)
+      modular-scale (>= 1.0.6)
     responsive-sass (0.1.1)
       compass (>= 0.11)
     rwdcalc (0.0.2)
@@ -187,6 +189,7 @@ DEPENDENCIES
   rack-contrib!
   rack-test
   rake
+  responsive-modular-scale
   responsive-sass
   rwdcalc
   salsa

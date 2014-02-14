@@ -461,6 +461,7 @@ Neat:
         photoshop-text-shadow(-60, 5px, 0, 5px, rgba(#300, 0.75))
       );
     }
+
 "Responsive Calculator":
   :gem: rwdcalc
   :import:
@@ -473,6 +474,28 @@ Neat:
     .foo {
       margin: rwdcalc(10 10px 13 1em, 960);
     }
+
+"Responsive Modular Scale":
+  :gem: responsive-modular-scale
+  :import:
+    - modular-scale
+    - responsive-modular-scale
+  :fingerprint: responsive-modular-scale
+  :url: http://gakimball.github.io/responsive-modular-scale/
+  :sample: >
+    @import "modular-scale";
+    @import "responsive-modular-scale";
+
+    h1 {
+      @include rms(6);
+    }
+    h2 {
+      @include rms(5);
+    }
+    p {
+      @include rms(0);
+    }
+
 "Responsive Sass":
   :gem: responsive-sass
   :import:
@@ -485,6 +508,7 @@ Neat:
     .block {
       @include mobile-landscape(960, 240, "/images/high-res.png");
     }
+
 Salsa:
   :gem: salsa
   :import:
