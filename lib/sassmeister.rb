@@ -83,7 +83,7 @@ module SassMeister
     require_plugins(sass)
 
     begin
-      send("#{syntax}".to_sym, sass.chomp, {:style => :"#{output_style}", :quiet => true})
+      Sass::Engine.new(sass.chomp, :syntax => syntax.to_sym, :style => :"#{output_style}", :quiet => true).render
 
     rescue Sass::SyntaxError => e
       status 200
@@ -94,7 +94,7 @@ module SassMeister
 
   def sass_convert(from_syntax, to_syntax, sass)
     begin
-      ::Sass::Engine.new(sass, {:from => from_syntax.to_sym, :to => to_syntax.to_sym, :syntax => from_syntax.to_sym}).to_tree.send("to_#{to_syntax}").chomp
+      Sass::Engine.new(sass, {:from => from_syntax.to_sym, :to => to_syntax.to_sym, :syntax => from_syntax.to_sym}).to_tree.send("to_#{to_syntax}").chomp
     rescue Sass::SyntaxError => e
       sass
     end
