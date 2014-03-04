@@ -101,7 +101,7 @@ GEM
       compass (>= 0.12.1)
       sass (>= 3.2.0)
     sass (3.2.14)
-    sass-list-maps (0.9.3)
+    sass-list-maps (0.9.7)
       compass (~> 0.12.0)
       sass (~> 3.2.0)
     sassy-buttons (0.2.6)
