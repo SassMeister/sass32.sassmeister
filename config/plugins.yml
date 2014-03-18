@@ -286,6 +286,7 @@ Foundation:
 
     @import "foundation/components/global";
     @import "foundation/components/tooltips";
+
 "Grid Coordinates":
   :gem: grid-coordinates
   :import:
@@ -300,6 +301,19 @@ Foundation:
     @import "grid-coordinates";
 
     @include grid-coordinates;
+
+Guff:
+  :gem: guff-compass
+  :import:
+    - guff
+  :fingerprint: guff
+  :sample: >
+    @import "guff";
+
+    .box {
+      @include container;
+    }
+
 Harsh:
   :gem: harsh
   :import:
