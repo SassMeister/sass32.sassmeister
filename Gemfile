@@ -6,12 +6,13 @@ gem 'sinatra'
 gem 'unicorn'
 gem 'sass', '~> 3.2.12'
 gem 'compass', '~> 0.12.2'
-gem 'rake'
+gem 'sassmeister', :path => '../sassmeister-compiler'
 
 group :development, :test do
   gem 'pry-remote'
   gem 'thor'
   gem 'rack-test'
+  gem 'rake'
 end
 
 group :production do

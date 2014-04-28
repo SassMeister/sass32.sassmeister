@@ -5,6 +5,11 @@ GIT
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
 
+PATH
+  remote: ../sassmeister-compiler
+  specs:
+    sassmeister (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -201,6 +206,7 @@ DEPENDENCIES
   salsa
   sass (~> 3.2.12)
   sass-list-maps
+  sassmeister!
   sassy-buttons
   sassy-text-shadow
   scut
