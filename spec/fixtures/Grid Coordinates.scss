@@ -1,0 +1,3 @@
+$grid-columns: 12; $grid-width: 60px; $grid-gutter-width: 20px;
+@import "grid-coordinates";
+@include grid-coordinates;

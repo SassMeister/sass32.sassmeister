@@ -1,0 +1,2 @@
+@import "susy";
+.ag2 { @include span-columns(6,10); } .ag3 { @include span-columns(2 omega, 10); } .ag4 { @include span-columns(3,6); } .ag5 { @include span-columns(3 omega,6); } .ag6 { @include span-columns(2,6); } .ag10 { clear: both; }

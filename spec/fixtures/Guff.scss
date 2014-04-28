@@ -1,0 +1,4 @@
+@import "guff";
+.box {
+  @include container;
+}

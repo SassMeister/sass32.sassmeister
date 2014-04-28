@@ -1,0 +1,8 @@
+@import "singularitygs"; @import 'singularity-golden-grid';
+.my-container {
+    @include grid-container;
+} .my-grid-unit {
+    @include grid-column(2);
+} .my-other-grid-unit {
+    @include grid-column;
+}

@@ -1,0 +1,4 @@
+@import "compass";
+#wrapper {
+  @include columns(20em 2);
+}
