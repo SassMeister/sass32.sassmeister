@@ -1,14 +1,15 @@
 GIT
+  remote: git://github.com/SassMeister/ruby-compiler.git
+  revision: 82e6ef52d37bd5da000c20c49d9d1fe751700532
+  specs:
+    sassmeister (0.0.1)
+
+GIT
   remote: git://github.com/rack/rack-contrib.git
   revision: 6ff3ca2b2d988911ca52a2712f6a7da5e064aa27
   specs:
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
-
-PATH
-  remote: ../sassmeister-compiler
-  specs:
-    sassmeister (0.0.1)
 
 GEM
   remote: http://rubygems.org/

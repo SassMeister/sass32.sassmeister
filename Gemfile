@@ -6,7 +6,7 @@ gem 'sinatra'
 gem 'unicorn'
 gem 'sass', '~> 3.2.12'
 gem 'compass', '~> 0.12.2'
-gem 'sassmeister', :path => '../sassmeister-compiler'
+gem 'sassmeister', :github => 'SassMeister/ruby-compiler'
 
 group :development, :test do
   gem 'rake'
