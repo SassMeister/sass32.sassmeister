@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/SassMeister/ruby-compiler.git
-  revision: 82e6ef52d37bd5da000c20c49d9d1fe751700532
+  revision: fd5059757f1b8f3264e47d3692f4ef9890ad2a45
   specs:
     sassmeister (0.0.1)
 
@@ -110,7 +110,7 @@ GEM
       compass (>= 0.12.1)
       sass (>= 3.2.0)
     sass (3.2.19)
-    sass-list-maps (0.9.7)
+    sass-list-maps (0.9.9)
       compass (~> 0.12.0)
       sass (~> 3.2.0)
     sassy-buttons (0.2.6)
@@ -159,7 +159,7 @@ GEM
     true (0.1.5)
       compass (>= 0.12.2)
       sass (>= 3.2.0)
-    unicorn (4.8.2)
+    unicorn (4.8.3)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
