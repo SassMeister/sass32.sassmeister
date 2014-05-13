@@ -1,2 +1,6 @@
-load 'tasks/update.rake'
-load 'tasks/test.rake'
+require 'bundler/setup'
+
+require 'sassmeister'
+
+load 'lib/tasks/test.rake'
+load 'lib/tasks/update.rake'
