@@ -24,7 +24,7 @@ Bootstrap Sass:
   :homepage: https://github.com/twbs/bootstrap-sass
 Bourbon:
   :gem: bourbon-compass
-  :version: 3.1.8
+  :version: 3.2.3
   :import:
   - bourbon/bourbon
   :fingerprint: (bourbon|bourbon/*)

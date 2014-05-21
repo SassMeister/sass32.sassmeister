@@ -20,7 +20,7 @@ group :production do
 end
 
 group :application do
-  gem 'bourbon-compass', '~> 3.1.8'
+  gem 'bourbon-compass', '~> 3.2.0'
   gem 'breakpoint'
   gem 'sassy-buttons'
   gem 'singularitygs'

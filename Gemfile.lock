@@ -21,9 +21,9 @@ GEM
       sass (>= 3.2)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
-    bourbon-compass (3.1.8)
-      compass (>= 0.11)
-      sass (>= 3.2.0)
+    bourbon-compass (3.2.3)
+      compass (~> 0.12.6)
+      sass (~> 3.2)
     breakpoint (2.0.7)
       compass (>= 0.12.1)
       sass (>= 3.2.0)
@@ -174,7 +174,7 @@ PLATFORMS
 DEPENDENCIES
   bitters-compass
   bootstrap-sass
-  bourbon-compass (~> 3.1.8)
+  bourbon-compass (~> 3.2.0)
   breakpoint
   breakpoint-slicer
   breakup
