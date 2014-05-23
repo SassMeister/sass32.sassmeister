@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/SassMeister/ruby-compiler.git
-  revision: 0422aeaf02099f1608d40c62030b0031153404bb
+  revision: c9424f5b6309d57cb03b625b65731f22ac520ac4
   specs:
     sassmeister (0.0.1)
 
@@ -121,7 +121,7 @@ GEM
       compass (>= 0.12.2)
     sassy-text-shadow (0.0.4)
       compass (>= 0.11.5)
-    scut (0.10.3)
+    scut (0.10.4)
       sass (~> 3.2, >= 3.2.0)
     sinatra (1.4.5)
       rack (~> 1.4)

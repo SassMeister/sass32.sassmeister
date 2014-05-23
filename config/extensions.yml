@@ -225,7 +225,7 @@ Sassy Text Shadow:
   :homepage: http://sassymothereffingtextshadow.com
 Scut:
   :gem: scut
-  :version: 0.10.3
+  :version: 0.10.4
   :import:
   - scut
   :fingerprint: scut
