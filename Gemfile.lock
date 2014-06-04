@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/rack/rack-contrib.git
-  revision: 6ff3ca2b2d988911ca52a2712f6a7da5e064aa27
+  revision: 5c12ace4ba2b9e4802e4d948a8ee0114da18760b
   specs:
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
@@ -27,7 +27,7 @@ GEM
     breakpoint (2.0.7)
       compass (>= 0.12.1)
       sass (>= 3.2.0)
-    breakpoint-slicer (1.2)
+    breakpoint-slicer (1.3)
       breakpoint (>= 2.0.1)
       compass (>= 0.12.2)
       sass (>= 3.2.1)
