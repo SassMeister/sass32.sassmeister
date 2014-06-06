@@ -1,0 +1,23 @@
+//////////////////////////////////////////////////////////////////
+// sticky footer
+//////////////////////////////////////////////////////////////////
+
+@if $ark-sticky-footer == true
+
+	+media-query(lap)
+		html, body
+			height: 100%
+
+		.site,
+		%site
+			min-height: 100%
+			margin-bottom: -$footer-height
+			&:after
+				content: ""
+				display: block
+
+		.footer,
+		%footer,
+		.site:after,
+		%site:after
+			height: $footer-height

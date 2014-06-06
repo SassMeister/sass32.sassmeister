@@ -1,0 +1,89 @@
+///////////////////////////////////////////////////////
+// Helper classes
+///////////////////////////////////////////////////////
+
+///////////////////////////////
+// clearfix
+///////////////////////////////
+
+.cf,
+.clearfix,
+%cf
+	&:before,
+	&:after
+		content: " "
+		display: table
+		
+	&:after
+		clear: both
+
+///////////////////////////////
+// base font site
+///////////////////////////////
+
+%base-font-size
+	+font-size($base-font-size)
+
+///////////////////////////////
+// position
+///////////////////////////////
+
+%pos--rel,
+%pr
+	position: relative
+
+%pos--abs,
+%pa
+	position: absolute
+
+%pos--fixed,
+%pf
+	position: fixed
+
+///////////////////////////////
+// text align
+///////////////////////////////
+
+%text--left,
+%tl
+	text-align: left
+
+%text--right,
+%tr
+	text-align: right
+
+%text--center,
+%tc
+	text-align: center
+
+///////////////////////////////
+// floats
+///////////////////////////////
+
+%float--left,
+%fl
+	float: left
+
+%float--right,
+%fr
+	float: right
+
+%float--none,
+%fn
+	float: none
+
+////////////////////////////////
+// font weights
+////////////////////////////////
+
+%weight--light,
+%wl
+	font-weight: $weight-light
+
+%weight--normal,
+%wn
+	font-weight: $weight-normal
+
+%weight--semibold,
+%ws
+	font-weight: $weight-semibold		

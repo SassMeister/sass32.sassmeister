@@ -1,4 +1,13 @@
 ---
+Ark:
+  :bower: ark
+  :paths:
+  - ark
+  :version: 6f37846bae
+  :import:
+  - ark/ark
+  :fingerprint: (ark|ark/*)
+  :homepage: 
 Bitters:
   :gem: bitters-compass
   :version: 0.9.3

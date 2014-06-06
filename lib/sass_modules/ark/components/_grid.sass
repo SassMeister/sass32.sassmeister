@@ -1,0 +1,69 @@
+///////////////////////////////////////////////////////
+// Grid - inspired by Inuit CSS
+///////////////////////////////////////////////////////
+
+.grid,
+%grid
+	@extend .cf
+	margin-left: -$base-spacing-unit
+
+.grid > .grid
+	margin-left: 0 // remove margin on nested grid items
+
+.grid__item,
+%grid__item
+	width: 100% // default grid items to be own segements in mobile
+	padding-left: $base-spacing-unit
+	float: left
+
+///////////////////////////////
+// full grid instance
+///////////////////////////////
+
+.grid--full,
+%grid--full
+	margin-left: 0!important
+	
+	.grid__item
+		padding-left: 0!important
+
+// inline grid
+.grid-i
+	margin-left: -$base-spacing-unit
+
+	.grid__item
+		float: none
+		display: inline-block
+		vertical-align: middle
+
+.grid__item
+
+	.grid-i--top &
+		vertical-align: top
+
+	.grid-i--bottom &
+		vertical-align: bottom
+
+///////////////////////////////
+// grid clears
+///////////////////////////////
+
+@mixin grid-clear($space: "")
+
+	.grid-clear-#{$space}2n
+		.grid__item:nth-child(2n+1)
+			clear: left
+
+	.grid-clear-#{$space}3n
+		.grid__item:nth-child(3n+1)
+			clear: left
+
+@include grid-clear()
+
+@each $state in $breakpoints
+	@if $state == 'lap'
+		@media screen and (min-width: $lap-start) and (max-width: $desk-start)
+			+grid-clear('#{$state}-')
+	@if $state == 'desk'
+		+media-query($state)
+			+grid-clear('#{$state}-')

@@ -1,3 +1,10 @@
+Ark:
+  :bower: ark
+  :import:
+    - ark/ark
+  :fingerprint: (ark|ark/*)
+  :paths:
+    - ark
 Bitters:
   :gem: bitters-compass
   :import:
