@@ -147,7 +147,8 @@
 @include layout-widths()
 @include widths()
 
-@each $state in $breakpoints
-	+media-query($state)
-		+widths('#{$state}-')
-		+layout-widths('#{$state}-')
+@each $name in $bp-names
+	+media-query($name)
+		+widths('#{$name}-')
+		+layout-widths('#{$name}-')
+		

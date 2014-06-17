@@ -44,10 +44,10 @@
 @include visbility()
 @include visuallyhidden()
 
-@each $state in $breakpoints
-	+media-query($state)
-		+visbility('#{$state}-')
-		+visuallyhidden('#{$state}-')
+@each $name in $bp-names
+	+media-query($name)
+		+visbility('#{$name}-')
+		+visuallyhidden('#{$name}-')
 
 // need palm for accessibility
 

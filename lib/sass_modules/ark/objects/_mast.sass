@@ -200,7 +200,7 @@
 		.mast__stay
 			padding-bottom: 91.666%
 
-@if $ark-mast == true
+@if $use-mast == true
 
 	.mast__stay
 		position: relative
@@ -219,9 +219,9 @@
 	@include layout-mast-setup
 	@include mast-setup()
 
-	@each $state in $breakpoints
+	@each $name in $bp-names
 
-		[class*="mast--#{$state}"]
+		[class*="mast--#{$name}"]
 
 			.mast__anchor
 				position: relative
@@ -229,7 +229,7 @@
 			.mast__stay
 				height: auto
 
-			+media-query($state)
+			+media-query($name)
 
 				.mast__anchor
 					position: absolute
@@ -237,7 +237,7 @@
 				.mast__stay
 					height: 0
 
-		+media-query($state)
+		+media-query($name)
 
-			+layout-mast-setup('#{$state}-')
-			+mast-setup('#{$state}-')
+			+layout-mast-setup('#{$name}-')
+			+mast-setup('#{$name}-')

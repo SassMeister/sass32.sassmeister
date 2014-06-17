@@ -3,7 +3,6 @@
 //////////////////////////////////////////////////////////////////
 
 
-
 @mixin layout-pull-setup($space: "")
 
 	// whole
@@ -28,6 +27,7 @@
 
 	.pull--#{$space}three-fourths
 		right: 75%
+
 
 @mixin pull-setup($space: "")
 
@@ -160,14 +160,8 @@
 	@include pull-setup()
 	@include layout-pull-setup()
 
-	@if $lap-pull == true
-
-		+media-query(lap)
-			+pull-setup('lap-')
-			+layout-pull-setup('lap-')
-
-	@if $desk-pull == true
-
-		+media-query(desk)
-			+pull-setup('desk-')
-			+layout-pull-setup('desk-')
+	@each $name in $bp-names
+		+media-query($name)
+			+pull-setup('#{$name}-')
+			+layout-pull-setup('#{$name}-')
+			

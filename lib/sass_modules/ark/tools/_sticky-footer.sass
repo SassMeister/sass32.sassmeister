@@ -2,9 +2,9 @@
 // sticky footer
 //////////////////////////////////////////////////////////////////
 
-@if $ark-sticky-footer == true
+@if $use-sticky-footer == true
 
-	+media-query(lap)
+	+media-query(nth($bp-names,1))
 		html, body
 			height: 100%
 

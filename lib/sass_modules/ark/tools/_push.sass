@@ -158,14 +158,7 @@
 	@include push-setup()
 	@include layout-push-setup()
 
-	@if $lap-push == true
-
-		+media-query(lap)
-			+push-setup('lap-')
-			+layout-push-setup('lap-')
-
-	@if $desk-push == true
-
-		+media-query(desk)
-			+push-setup('desk-')
-			+layout-push-setup('desk-')
+	@each $name in $bp-names
+		+media-query($name)
+			+pull-setup('#{$name}-')
+			+layout-push-setup('#{$name}-')

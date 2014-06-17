@@ -162,6 +162,6 @@
 
 @include box-model()
 
-@each $state in $breakpoints
-	+media-query($state)
-		+box-model('#{$state}-')
+@each $name in $bp-names
+	+media-query($name)
+		+box-model('#{$name}-')

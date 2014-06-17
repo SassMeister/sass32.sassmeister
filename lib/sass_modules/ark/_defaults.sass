@@ -3,10 +3,16 @@
 ///////////////////////////////////////////////////////
 
 ///////////////////////////////
+// ark base styles
+///////////////////////////////
+
+$ark-base: true
+
+///////////////////////////////
 // normalize
 ///////////////////////////////
 
-$normalize: true!default
+$use-normalize: true!default
 
 ///////////////////////////////
 // responsive variables
@@ -14,20 +20,16 @@ $normalize: true!default
 
 // breakpoints
 
-$breakpoints: lap desk!default
+// sass 3.3 maps, move to new branch
+// $breakpoints: (lap: 768px, desk: 1024px)!default
 
-$lap-start: 768px!default
-$desk-start: 1024px!default
+$bp-names lap, desk!default
+$bp-sizes: 768px, 1024px!default
 
 // push & pull
 
 $use-push: false!default
-$lap-push: false!default
-$desk-push: false!default
-
 $use-pull: false!default
-$lap-pull: false!default
-$desk-pull: false!default
 
 ///////////////////////////////
 // layout variables
@@ -36,11 +38,11 @@ $desk-pull: false!default
 // global site layout
 
 $site-width: 1180px!default
-$shared: true!default
+$use-shared: true!default
 
 // ark sticky footer
 
-$ark-sticky-footer: false!default
+$use-sticky-footer: false!default
 $footer-height: 150px!default
 
 ///////////////////////////////
@@ -81,13 +83,8 @@ $dsu: $dbl-spacing-unit
 // turn objects off by default
 /////////////////////////////////////////
 
-$ark-media: false!default
-$ark-flag: false!default
-$ark-flex: false!default
-$ark-mast: false!default
+$use-media: false!default
+$use-flag: false!default
+$use-flex: false!default
+$use-mast: false!default
 
-///////////////////////////////
-// prototype tools
-///////////////////////////////
-
-$prototype: false!default

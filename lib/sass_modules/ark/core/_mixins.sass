@@ -7,22 +7,19 @@
 ///////////////////////////////
 
 @mixin media-query($breakpoint)
+	@for $i from 1 through length($bp-names)
+		$name: nth($bp-names,$i)
+		@if $breakpoint == $name
+			@media screen and (min-width: nth($bp-size,$i))
+				@content
 
-	@if $breakpoint == lap
-		@media screen and (min-width: $lap-start)
-			@content
-
-	@else if $breakpoint == desk
-		@media screen and (min-width: $desk-start)
-			@content
 
 @mixin media-query-debug()
-
-	@media screen and (max-width: $lap-start - 1px)
+	@media screen and (max-width: nth($bp-sizes,1))
 		@content
 	
 ///////////////////////////////
-// font size mixin - stolen from Inuit.css
+// font size mixin - inspired by Inuit CSS
 ///////////////////////////////
 
 @mixin font-size($font-size, $line-height: true)
