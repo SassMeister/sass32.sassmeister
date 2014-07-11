@@ -1,8 +1,11 @@
 GIT
   remote: git://github.com/SassMeister/ruby-compiler.git
-  revision: c9424f5b6309d57cb03b625b65731f22ac520ac4
+  revision: 05556ad1012492a231550d5d2f10d45bc692bf35
   specs:
     sassmeister (0.0.1)
+      dalli (~> 2.6.4)
+      memcachier (~> 0.0.2)
+      rack-cache (~> 1.2)
 
 GIT
   remote: git://github.com/rack/rack-contrib.git
@@ -58,6 +61,7 @@ GEM
       sass
     css-slideshow (0.2.0)
       compass (>= 0.10.0.rc3)
+    dalli (2.6.4)
     fancy-buttons (1.2.0)
       compass (>= 0.11)
     fittext (0.0.5)
@@ -74,6 +78,7 @@ GEM
       compass (>= 0.12.2)
       sass (>= 3.2.0)
     kgio (2.9.2)
+    memcachier (0.0.2)
     method_source (0.8.2)
     modular-scale (2.0.5)
       compass (>= 0.12.0)
@@ -93,6 +98,8 @@ GEM
       pry (~> 0.9)
       slop (~> 3.0)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
