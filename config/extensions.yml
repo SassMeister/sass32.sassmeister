@@ -10,7 +10,7 @@ Ark:
   :homepage: https://github.com/drewbolles/ark
 Bitters:
   :gem: bitters-compass
-  :version: 0.9.3
+  :version: 0.10.0
   :import:
   - bourbon/bourbon
   - neat/neat
@@ -26,7 +26,7 @@ Blend Modes:
   :homepage: https://github.com/heygrady/scss-blend-modes
 Bootstrap Sass:
   :gem: bootstrap-sass
-  :version: 3.1.1.1
+  :version: 3.2.0.0
   :import:
   - bootstrap
   :fingerprint: (bootstrap|bootstrap/*)
@@ -47,7 +47,7 @@ Breakpoint:
   :homepage: https://github.com/Team-Sass/breakpoint
 Breakpoint Slicer:
   :gem: breakpoint-slicer
-  :version: '1.3'
+  :version: 1.3.4
   :import:
   - breakpoint-slicer
   :fingerprint: breakpoint-slicer
