@@ -1,0 +1,20 @@
+{
+  "name": "sass3-2.sassmeister",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SassMeister/sass32.sassmeister",
+  "authors": [
+    "Jed Foster <jed@jedfoster.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./lib/sass_modules/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ark": "https://github.com/drewbolles/ark.git"
+  }
+}
