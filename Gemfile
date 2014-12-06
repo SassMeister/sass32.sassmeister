@@ -16,6 +16,14 @@ group :development, :test do
   gem 'rack-test'
 end
 
+group :test do
+  gem 'fakeredis'
+end
+
+group :development, :production do
+  gem 'redis'
+end
+
 group :production do
   gem 'newrelic_rpm'
 end
@@ -41,8 +49,7 @@ group :application do
   gem 'zen-grids'
   gem 'breakpoint-slicer'
   gem 'sassy-text-shadow'
-  gem 'compass-blend-modes'
-  gem 'jacket'
+
   gem 'singularity-extras'
   gem 'normalize-scss'
   gem 'zurb-foundation'
