@@ -75,7 +75,7 @@ Color Schemer:
   :homepage: https://github.com/scottkellum/color-schemer
 Compass:
   :gem: compass
-  :version: 0.12.6
+  :version: 0.12.7
   :import:
   - compass
   :fingerprint: (compass|compass/*)
@@ -173,7 +173,7 @@ Normalize SCSS:
   :import:
   - normalize-scss
   :fingerprint: normalize-scss
-  :homepage: https://github.com/JohnAlbin/normalize.css-with-sass-or-compass
+  :homepage: https://github.com/JohnAlbin/normalize-scss
 Photoshop Drop Shadow:
   :gem: compass-photoshop-drop-shadow
   :version: 0.0.1
@@ -297,7 +297,7 @@ Toolkit:
   :import:
   - 'true'
   :fingerprint: 'true'
-  :homepage: http://oddbird.net/
+  :homepage: http://ericsuzanne.com/true
 YIQ Color Contrast:
   :gem: compass-yiq-color-contrast
   :version: 1.1.1

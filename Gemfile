@@ -29,6 +29,8 @@ group :production do
 end
 
 group :application do
+  gem 'jacket'
+  gem 'compass-blend-modes'
   gem 'bourbon-compass', '~> 3.2.0'
   gem 'breakpoint'
   gem 'sassy-buttons'
